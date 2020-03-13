@@ -8,6 +8,8 @@ package body Prisoners is
    package Random_Drawer is new Ada.Numerics.Discrete_Random (Drawer_Range);
    use Random_Drawer;
 
+   -- Helper procedures to initialise and shuffle the drawers
+
    procedure Swap (A, B : Positive; Cupboard : in out Drawers) is
       Temp : Positive;
    begin
@@ -32,6 +34,8 @@ package body Prisoners is
       end loop;
       Shuffle (Cupboard);
    end Initialise_Drawers;
+
+   -- The two strategies for playing the game
 
    function Optimal_Strategy
      (Cupboard : in Drawers; Max_Prisoners : Integer; Max_Attempts : Integer;
@@ -92,6 +96,8 @@ package body Prisoners is
       end loop;
       return True;
    end Prisoners_Attempts;
+
+   -- The function to play the game itself
 
    function Play_Game
      (Repetitions : in Positive;

@@ -9,6 +9,8 @@ package Prisoners is
         (Cupboard     : in Drawers; Max_Prisoners : Integer;
          Max_Attempts :    Integer; Prisoner_Number : Integer) return Boolean)
       return Win_Percentage;
+   -- Play the game with a specified number of repetitions, the chosen strategy
+   -- is passed to this function
 
    function Optimal_Strategy
      (Cupboard : in Drawers; Max_Prisoners : Integer; Max_Attempts : Integer;
